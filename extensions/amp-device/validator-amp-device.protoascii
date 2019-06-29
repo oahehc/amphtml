@@ -31,6 +31,6 @@ tags: {  # <amp-device>
   attr_lists: "extended-amp-global"
   spec_url: "https://amp.dev/documentation/components/amp-device"
   amp_layout: {
-    supported_layouts: RESPONSIVE
+    supported_layouts: CONTAINER
   }
 }

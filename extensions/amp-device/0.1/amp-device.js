@@ -14,32 +14,29 @@
  * limitations under the License.
  */
 
-import {Layout} from '../../../src/layout';
+import {isLayoutSizeDefined} from '../../../src/layout';
+import getDevice from './is';
 
 export class AmpDevice extends AMP.BaseElement {
-
   /** @param {!AmpElement} element */
   constructor(element) {
     super(element);
-
-    /** @private {string} */
-    this.myText_ = 'hello world';
-
-    /** @private {?Element} */
-    this.container_ = null;
   }
 
   /** @override */
   buildCallback() {
-    this.container_ = this.element.ownerDocument.createElement('div');
-    this.container_.textContent = this.myText_;
-    this.element.appendChild(this.container_);
-    this.applyFillContent(this.container_, /* replacedContent */ true);
+    const userAgent = this.getWin().navigator.userAgent;
+    const platform = this.getWin().navigator.platform;
+    const device = getDevice({userAgent, platform});
+
+    console.log('--- ', {userAgent, platform, device});
+
+    this.element.classList.add(device);
   }
 
   /** @override */
   isLayoutSupported(layout) {
-    return layout == Layout.RESPONSIVE;
+    return isLayoutSizeDefined(layout);
   }
 }
 
