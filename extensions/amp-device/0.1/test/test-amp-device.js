@@ -16,23 +16,26 @@
 
 import '../amp-device';
 
-describes.realWin('amp-device', {
-  amp: {
-    extensions: ['amp-device'],
+describes.realWin(
+  'amp-device',
+  {
+    amp: {
+      extensions: ['amp-device'],
+    },
   },
-}, env => {
+  env => {
+    let win;
+    let element;
 
-  let win;
-  let element;
+    beforeEach(() => {
+      win = env.win;
+      element = win.document.createElement('amp-device');
+      win.document.body.appendChild(element);
+    });
 
-  beforeEach(() => {
-    win = env.win;
-    element = win.document.createElement('amp-device');
-    win.document.body.appendChild(element);
-  });
-
-  it('should have hello world when built', () => {
-    element.build();
-    expect(element.querySelector('div').textContent).to.equal('hello world');
-  });
-});
+    it('should have "i-amphtml-desktop" class name for desktop device', () => {
+      element.build();
+      expect(element.classList.value).to.contain.string('i-amphtml-desktop');
+    });
+  }
+);

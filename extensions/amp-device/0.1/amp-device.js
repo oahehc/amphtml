@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {isLayoutSizeDefined} from '../../../src/layout';
+import {Layout} from '../../../src/layout';
 import getDevice from './is';
 
 export class AmpDevice extends AMP.BaseElement {
@@ -31,12 +31,12 @@ export class AmpDevice extends AMP.BaseElement {
 
     console.log('--- ', {userAgent, platform, device});
 
-    this.element.classList.add(device);
+    this.element.classList.add(`i-amphtml-${device}`);
   }
 
   /** @override */
   isLayoutSupported(layout) {
-    return isLayoutSizeDefined(layout);
+    return layout == Layout.CONTAINER;
   }
 }
 
