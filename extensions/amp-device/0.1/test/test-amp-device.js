@@ -33,9 +33,9 @@ describes.realWin(
       win.document.body.appendChild(element);
     });
 
-    it('should have "i-amphtml-desktop" class name for desktop device', () => {
+    it('should add "desktop" class name for desktop device', () => {
       element.build();
-      expect(element.classList.value).to.contain.string('i-amphtml-desktop');
+      expect(element.classList.value).to.contain.string('desktop');
     });
   }
 );

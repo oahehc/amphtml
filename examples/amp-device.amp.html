@@ -14,11 +14,19 @@
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <style amp-custom>
       amp-device {
-        color: red;
+        font-size: 2rem;
       }
-
-      .content {
+      .desktop > div > span:after {
+        color: red;
+        content: 'DESKTOP';
+      }
+      .tablet > div > span:after {
         color: blue;
+        content: 'TABLET';
+      }
+      .mobile > div > span:after {
+        color: green;
+        content: 'MOBILE';
       }
     </style>
     <script
@@ -29,8 +37,8 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   </head>
   <body>
-    <amp-device layout="container"
-      ><div class="content">content...</div></amp-device
-    >
+    <amp-device layout="container">
+      <div>This is <span></span></div>
+    </amp-device>
   </body>
 </html>
