@@ -1,25 +1,11 @@
-<!--
-  1. Change "category" below to one of:
-       ads-analytics
-       dynamic-content
-       layout
-       media
-       presentation
-       social
-
-  2. Remove any of the "formats" that don't apply.
-     You can also add the "ads" and "stories" formats if they apply.
-
-  3. And remove this comment! (no empty lines before "---")
--->
 ---
 $category: presentation
 formats:
   - websites
-  - email
 teaser:
-  text: FILL THIS IN.
+  text: add device type as class base on user agent
 ---
+
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
 
@@ -41,11 +27,11 @@ limitations under the License.
 <table>
   <tr>
     <td width="40%"><strong>Description</strong></td>
-    <td>FILL THIS IN</td>
+    <td>Can be used to display different content on desktop, tablet and mobile device.</td>
   </tr>
   <tr>
     <td width="40%"><strong>Availability</strong></td>
-    <td>FILL THIS IN</td>
+    <td><a href="https://www.ampproject.org/docs/reference/experimental.html">Experimental</a></td>
   </tr>
   <tr>
     <td width="40%"><strong>Required Script</strong></td>
@@ -53,28 +39,27 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong><a href="https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout">Supported Layouts</a></strong></td>
-    <td>FILL THIS IN</td>
+    <td>container</td>
   </tr>
   <tr>
     <td width="40%"><strong>Examples</strong></td>
-    <td>FILL THIS IN</td>
+    <td><a href="https://github.com/ampproject/amphtml/blob/master/examples/amp-device.amp.html">amp-device.amp.html</a></td>
   </tr>
 </table>
 
 ## Behavior
 
-FILL THIS IN. What does this extension do?
+The `amp-device` component add device(desktop|tablet|mobile) as class name, so developer can use CSS to control what we want to display in each device.
 
 ## Attributes
 
-FILL THIS IN. Does this extension allow for properties to configure?
-
 <table>
   <tr>
-    <td width="40%"><strong>data-my-attribute</strong></td>
-    <td>FILL THIS IN. This table <strong>must</strong> be written in HTML.</td>
+    <td width="40%"><strong>layout [required]</strong></td>
+    <td>The value must be `container`.</td>
   </tr>
 </table>
 
 ## Validation
+
 See [amp-device rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-device/validator-amp-device.protoascii) in the AMP validator specification.
