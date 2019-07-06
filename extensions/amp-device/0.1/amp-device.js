@@ -25,10 +25,8 @@ export class AmpDevice extends AMP.BaseElement {
 
   /** @override */
   buildCallback() {
-    const userAgent = this.getWin().navigator.userAgent;
-    const platform = this.getWin().navigator.platform;
-    const device = getDevice({userAgent, platform});
-    // console.log('--- ', {userAgent, platform, device}); // TODO:
+    const {userAgent, platform} = navigator;
+    const device = getDevice(userAgent, platform);
 
     this.element.classList.add(device);
   }

@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import getDevice from '../is';
 
 describe('getDevice', () => {
@@ -6,7 +21,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3837.0 Safari/537.36';
     const platform = 'MacIntel';
 
-    expect(getDevice({userAgent, platform})).to.equal('desktop');
+    expect(getDevice(userAgent, platform)).to.equal('desktop');
   });
 
   it('should return "desktop" for MacOS Safari', () => {
@@ -14,7 +29,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.1 Safari/605.1.15';
     const platform = 'MacIntel';
 
-    expect(getDevice({userAgent, platform})).to.equal('desktop');
+    expect(getDevice(userAgent, platform)).to.equal('desktop');
   });
 
   it('should return "desktop" for MacOS Firefox', () => {
@@ -22,7 +37,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:66.0) Gecko/20100101 Firefox/66.0';
     const platform = 'MacIntel';
 
-    expect(getDevice({userAgent, platform})).to.equal('desktop');
+    expect(getDevice(userAgent, platform)).to.equal('desktop');
   });
 
   it('should return "tablet" for iPad', () => {
@@ -30,7 +45,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1';
     const platform = 'iPad';
 
-    expect(getDevice({userAgent, platform})).to.equal('tablet');
+    expect(getDevice(userAgent, platform)).to.equal('tablet');
   });
 
   it('should return "tablet" for Android tablet-Nexus 10', () => {
@@ -38,7 +53,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 10 Build/MOB31T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3837.0 Safari/537.36';
     const platform = 'Android';
 
-    expect(getDevice({userAgent, platform})).to.equal('tablet');
+    expect(getDevice(userAgent, platform)).to.equal('tablet');
   });
 
   it('should return "tablet" for Windows tablet', () => {
@@ -46,7 +61,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0; Touch)';
     const platform = 'Windows';
 
-    expect(getDevice({userAgent, platform})).to.equal('tablet');
+    expect(getDevice(userAgent, platform)).to.equal('tablet');
   });
 
   it('should return "mobile" for iPhone', () => {
@@ -54,7 +69,7 @@ describe('getDevice', () => {
       'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"';
     const platform = 'iPhone';
 
-    expect(getDevice({userAgent, platform})).to.equal('mobile');
+    expect(getDevice(userAgent, platform)).to.equal('mobile');
   });
 
   it('should return "mobile" for Android phone-pixel2', () => {
